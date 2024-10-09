@@ -1,6 +1,6 @@
-# Trust DID Web (did:tdw) Registries/Resolvers
+# Trust DID Web (did:tdw) Registrars/Resolvers
 
-Proof of concept implementations of `did:tdw` software for DID Controllers and resolvers can be found here:
+Proof of concept implementations of `did:tdw` software for DID Controller registrars and resolvers can be found here:
 
 - [Typescript](https://github.com/decentralized-identity/trustdidweb-ts)
 - [Python](https://github.com/decentralized-identity/trustdidweb-py)

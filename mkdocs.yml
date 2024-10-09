@@ -89,7 +89,7 @@ nav:
 - Examples:
     - did:tdw DID Log Example: example.md
 - Implementations:
-    - Trust DID Web (did:tdw) Implementations: implementations.md
+    - did:tdw Registrars/Resolvers: implementations.md
     - Trust DID Web Server: trustdidweb-server.md
 - Demos:
     - Trust DID Web (did:tdw) Demos: demos/README.md
