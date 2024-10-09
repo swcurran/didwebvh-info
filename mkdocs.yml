@@ -78,7 +78,7 @@ extra:
     provider: mike
 nav:
 - Welcome:
-    - Introduction to Trust DID Web: introduction.md
+    - Introduction to Trust DID Web: README.md
     - Overview: overview.md
     - did/whois: whois.md
     - Release Notes: version.md
@@ -94,6 +94,6 @@ nav:
 - Demos:
     - Trust DID Web (did:tdw) Demos: demos/README.md
 - Contributing:
-    - How to Contribute: README.md
-    - Contributor Guidelines: CONTRIBUTOR.md
-    - Code of Conduct: CODE_OF_CONDUCT.md
+    - How to Contribute: root_README.md
+    - Contributor Guidelines: root_CONTRIBUTOR.md
+    - Code of Conduct: root_CODE_OF_CONDUCT.md

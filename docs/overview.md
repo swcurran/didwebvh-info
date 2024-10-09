@@ -48,7 +48,7 @@ For backwards compatibility, and for verifiers that "trust" `did:web`, a
 `did:tdw` can be trivially modified and published in parallel to a `did:web`
 DID. For resolvers that want more assurance, `did:tdw` provides a way to "trust
 did:web" (or to enable a "trusted web" if you say it fast) enabled by the
-features listed in the [welcome](./welcome.md).
+features listed in the [introduction](./README.md).
 
 The following is a `tl;dr` summary of how `did:tdw` works:
 
