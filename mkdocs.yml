@@ -85,8 +85,12 @@ nav:
 - The Specification:
     - Specification: specification.md
 - Implementer's Guide:
-    - did:tdw Implementer's Guide: implementers_guide.md
-- Examples:
+    - The `did:tdw` Implementer's Guide: implementers-guide/README.md
+    - Using Pre-Rotation keys: implementers-guide/prerotation-keys.md
+    - DID Portability: implementers-guide/did-portability.md
+    - Witnesses: implementers-guide/witnesses.md
+    - High Assurance DIDs with DNS: implementers-guide/high-assurance-dids-with-dns.md
+- A `did:tdw` Example Log:
     - did:tdw DID Log Example: example.md
 - Implementations:
     - did:tdw Registrars/Resolvers: implementations.md

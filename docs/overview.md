@@ -111,5 +111,5 @@ The specification was developed in parallel with the development of two
 proof of concept implementations. The specification/implementation interplay
 helped immensely in defining a practical, intuitive, straightforward, DID
 method. The existing proof of concept implementations of the `did:tdw` DID
-Method are listed in the [Implementers Guide](./implementers_guide.md). The current
+Method are listed in the [Implementers Guide](./implementers-guide/README.md). The current
 implementations range from around 1500 to 2000 lines of code.
