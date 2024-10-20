@@ -1,38 +1,47 @@
 
-Trust DID Web (`did:tdw`) is an enhancement to the `did:web` DID method,
-providing complementary features that address `did:web`'s
-limitations. `did:tdw` features include:
+Trust DID Web (`did:tdw`) is a DID method that is being developed with the aim of enabling greater trust and security 
+than `did:web` without compromising the simplicity of `did:web`.
+Core features of the `did:tdw` method that complement `did:web` include:
 
-- Ongoing publishing of all DID Document (DIDDoc) versions for a DID instead of,
-  or alongside a current `did:web` DID/DIDDoc.
-- The same DID-to-HTTPS transformation as `did:web`.
-- Supports the same [High Assurance DIDs with DNS] mechanism.
-- The ability to resolve the full history of the DID using a verifiable chain of
+- **A Verifiable History**: The ability to resolve the full history of the DID using a verifiable chain of
   updates to the DIDDoc from genesis to deactivation.
-- A self-certifying identifier (SCID) for the DID. The SCID, globally unique and
+- **A Self-Certifying Identifier (SCID)**: The SCID, globally unique and
   embedded in the DID, is derived from the initial DID log entry. It ensures the integrity
   of the DID's history mitigating the risk of attackers creating a new object with
   the same identifier.
-- An optional mechanism for enabling DID portability via the SCID, allowing
+- **Authorized Keys**: DIDDoc updates contain a proof signed by the DID Controllers *authorized* to
+  update the DID.
+- **Pre-rotation Keys** (optional): The mechanism for publishing pre-rotation keys prevents the loss of
+  control of a DID in cases where an active private key is compromised.
+- **Witnesses** (optional): The mechanism for having witnesses enables the collaborative
+  approval of updates to the DID by a DID Controller before publication.
+- **DID Portability** (optional): The mechanism for enabling potability allows
   the DID's web location to be moved and the DID string to be updated, both while retaining
   a connection to the predecessor DID(s) and preserving the DID's verifiable history.
-- DIDDoc updates contain a proof signed by the DID Controllers *authorized* to
-  update the DID.
-- An optional mechanism for publishing "pre-rotation" keys to prevent the loss of
-  control of a DID in cases where an active private key is compromised.
-- An optional mechanism for having collaborating witnesses
-  that approve of updates to the DID by a DID Controller before publication.
-- DID URL path handling that defaults (but can be overridden) to automatically
+
+In addition, the `did:tdw` method supports:
+
+- **A DID URL path handling** that defaults (but can be overridden) to automatically
   resolving `<did>/path/to/file` by using a comparable DID-to-HTTPS translation
   as for the DIDDoc.
-- A DID URL path `<did>/whois` that defaults to automatically returning (if
+- **A DID URL path `<did>/whois`** that defaults to automatically returning (if
   published by the [[ref: DID controller]]) a [[ref: Verifiable Presentation]]
   containing [[ref: Verifiable Credentials]] with the DID as the
   `credentialSubject`, signed by the DID. It draws inspiration from the
   traditional WHOIS protocol [[spec:rfc3912]], offering an easy-to-use,
   decentralized, trust registry.
+- **DID-to-HTTPS transformation** that is the same as used for `did:web`.
+- **[High Assurance DIDs with DNS] mechanism** that is the same as used for `did:web`.
 
 [High Assurance DIDs with DNS]: https://datatracker.ietf.org/doc/draft-carter-high-assurance-dids-with-dns/
 
-Combined, the additional features enable greater trust and security without
-compromising the simplicity of `did:web`.
+
+The `did:tdw` specification and based on it the implementer's guide were developed in parallel with the development of two
+proof of concept implementations. The specification/implementation interplay
+helped immensely in defining a practical, intuitive, straightforward, DID
+method. The existing proof of concept implementations of the `did:tdw` DID
+Method are listed in the [Implementers Guide](./implementers-guide/README.md). The current
+implementations range from around 1500 to 2000 lines of code.
+
+An example of a `did:tdw` evolving through a series of versions can be seen in
+the [did:tdw Examples](./example.md) included on this site.

@@ -2,9 +2,11 @@
 
 This series of articles shares insights from developers and deployers of Trust
 DID Web (`did:tdw`), highlighting lessons learned from real-world deployments
-and use cases. The guide explores the features of did:tdw, how to deploy them,
+and use cases. 
+
+The guide explores the features of `did:tdw`, how to deploy them,
 what’s covered in the specification versus what implementers need to handle,
-provide pointers to existing implementations, and more.
+provides pointers to existing implementations, and more.
 
 Contributions to the guide are welcome! If you have learned something about
 deploying did:tdw and want to share -- open an [issue], or submit a pull request
