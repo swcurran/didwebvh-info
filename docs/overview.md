@@ -81,7 +81,8 @@ infrastructure to those seeking greater security assurances provided by `did:tdw
 
 4. Calculate the data integrity (DI) proof
     - `proof` := a proof calculated across the *entire* DID Log Entry and signed with an `updateKeys` (and optionally by witnesses). Values of required attributes include:
-        - `type` := eddsa-jcs-2022
+        - `type` := `DataIntegrityProof`
+        - `cryptosuite` := `eddsa-jcs-2022`
         - `proofPurpose` := `assertionMethod`
 
 5. Add the DI proof to the `proof` property of the DID Log Entry
