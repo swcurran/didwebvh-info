@@ -17,7 +17,7 @@ published by the DID Controller) containing Verifiable Credentials with
 the DID as the `credentialSubject`, and the VP signed by the DID. Given a DID,
 one can gather verifiable data about the DID Controller by resolving
 `<did>/whois` and processing the returned VP. That's powerful -- an efficient,
-highly decentralized, trust registry. For `did:tdw`, the approach is very simple
+highly decentralized, trust registry. For `did:webvh`, the approach is very simple
 -- transform the DID to its HTTPS equivalent, and execute a `GET <https>/whois`.
 Need to know who issued the VCs in the VP? Get the issuer DIDs from those VCs,
 and resolve `<issuer did>/whois` for each. This is comparable to walking a CA
@@ -25,7 +25,7 @@ and resolve `<issuer did>/whois` for each. This is comparable to walking a CA
 and the issuers that attest to them.
 
 The following is a use case for the `/whois` capability. Consider an example of
-the `did:tdw` controller being a mining company that has exported a shipment and
+the `did:webvh` controller being a mining company that has exported a shipment and
 created a "Product Passport" Verifiable Credential with information about the
 shipment. A country importing the shipment (the Importer) might want to know
 more about the issuer of the VC, and hence, the details of the shipment. They
@@ -42,7 +42,7 @@ about that DID. It might contain:
   - Perhaps the Importer does not know about the mining authority for that
     jurisdiction. The Importer can repeat the `/whois` resolution process for
     the issuer of _that_ credential. The Importer might (for example), resolve
-    and verify the `did:tdw` DID for the Authority, and then resolve the
+    and verify the `did:webvh` DID for the Authority, and then resolve the
     `/whois` DID URL to find a verifiable credential issued by the government of
     the jurisdiction. The Importer recognizes and trusts that government's
     authority, and so can decide to recognize and trust the mining permit

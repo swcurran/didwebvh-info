@@ -14,27 +14,34 @@ inherently decentralized as it relies on DNS domain names, which require central
 `did:web` lacks a cryptographically verifiable, tamper-resistant, and persistently stored DID document,
 including its verifiable history.
 
-We propose the `did:tdw` (Trust DID Web) method presented here as an enhancement of `did:web`, providing a 
-solution to address the limitations inherent of `did:web`. `did:tdw` introduces features such as a 
-verifiable history, akin to what is available with ledger-based DIDs, but without relying on a ledger,
-a self-certifying identifiers (SCIDs), and authorized key(s) to increase controll over the creation, update,
-and deactivation of a DID. Furthermore, the `did:tdw` method provides a more decentralized approach by ensuring 
-that the security of the embedded SCID does not depend on DNS, and enables resolving a cryptographically 
-verifiable trust registry and status lists, using DID-Linked Resources, which `did:web` lacks. 
+We propose the `did:webhv` (`did:web` + Verifiable History) method presented
+here as an enhancement of `did:web`, providing a solution to address the
+limitations inherent of `did:web`. The `did:webvh` was called `did:tdw` through
+version v0.4 of the specification. `did:webvh` introduces features such as a
+verifiable history, akin to what is available with ledger-based DIDs, but
+without relying on a ledger, a self-certifying identifiers (SCIDs), and
+authorized key(s) to increase control over the creation, update, and
+deactivation of a DID. Furthermore, the `did:webvh` method provides a more
+decentralized approach by ensuring that the security of the embedded SCID does
+not depend on DNS, and enables resolving a cryptographically verifiable trust
+registry and status lists, using DID-Linked Resources, which `did:web` lacks. 
 
-In summary, the `did:tdw` method offers a higher level of assurance for those requiring more robust verification 
-processes compared to what is provided by `did:web`. It also represents a significant stride towards a more 
-trusted and secure web, where the integrity of cryptographic key publishing and management is paramount. 
-In addition, `did:tdw` maintains backward compatibility with `did:web` and the resulting DID can be published 
-as both `did:web` and `did:tdw`. These possibilities carter to a flexible and broader range of use cases and 
-corresponding trust requirements, addressing both those who are comfortable with the existing `did:web` 
-infrastructure to those seeking greater security assurances provided by `did:tdw`. 
+In summary, the `did:webvh` method offers a higher level of assurance for those
+requiring more robust verification processes compared to what is provided by
+`did:web`. It also represents a significant stride towards a more trusted and
+secure web, where the integrity of cryptographic key publishing and management
+is paramount. In addition, `did:webvh` maintains backward compatibility with
+`did:web` and the resulting DID can be published as both `did:web` and
+`did:webvh`. These possibilities carter to a flexible and broader range of use
+cases and corresponding trust requirements, addressing both those who are
+comfortable with the existing `did:web` infrastructure to those seeking greater
+security assurances provided by `did:webvh`. 
 
-### A `tl;dr` summary of `did:tdw`
+### A `tl;dr` summary of `did:webvh`
 
-#### The `did:tdw` Structure *(or, Where is the `DID Doc`??)*
+#### The `did:webvh` Structure *(or, Where is the `DID Doc`??)*
 
-- `did:tdw` uses a so-called DID Log to publish cryptographic material and capabilities
+- `did:webvh` uses a so-called DID Log to publish cryptographic material and capabilities
 - A `DID Log` is stored as `did.jsonl` file and represents a list of entries, each formatted as JSON line
 - Every `DID Log Entry` describes a specific version of the corresponding DID via a JSON object
     - DID Log Entry := `{ "versionId": "", "versionTime": "", "parameters": {}, "state": {}, "proof" : [] }`  
@@ -62,7 +69,7 @@ infrastructure to those seeking greater security assurances provided by `did:tdw
         - `versionId` := the literal string "`{SCID}`"
         - `versionTime` := as asserted by the DID Controller, for example, `"2024-04-05T07:32:58Z"`
         - `parameters` := as needed and defined by the DID Controller, for example:
-            - method := `did:tdw:0.4`
+            - method := `did:webvh:0.4`
             - SCID := the literal string "`{SCID}`" (here and wherever the calculated SCID value will eventually be placed)
         - `state` := initial DID Doc with placeholders (the literal string "`{SCID}`") wherever the calculated SCID value will eventually be placed
         - *`proof` := not set at this point. Will be set in step 4 below*
@@ -71,7 +78,7 @@ infrastructure to those seeking greater security assurances provided by `did:tdw
     - SCID := `base58btc(multihash(JCS(preliminary log entry with placeholders), <hash algorithm>))`
         - `JCS` := an implementation of the JSON Canonicalization Scheme ([RFC8785](https://www.rfc-editor.org/info/rfc8785))
         - `multihash` := an implementation of the [multihash](https://multiformats.io/multihash/) specification
-        - `<hash algorithm>` := one of the hash algorithms accepted by  `did:tdw` (see [parameters](https://identity.foundation/trustdidweb/#didtdw-did-method-parameters) in the specification)
+        - `<hash algorithm>` := one of the hash algorithms accepted by  `did:webvh` (see [parameters](https://identity.foundation/trustdidweb/#didtdw-did-method-parameters) in the specification)
         - `base58btc` := an implementation of the [base58btc](https://datatracker.ietf.org/doc/html/draft-msporny-base58-03) function
 
 3. Update the preliminary log entry
@@ -104,12 +111,12 @@ infrastructure to those seeking greater security assurances provided by `did:tdw
     - The `versionId` is the number of the version (incrementing by one per version), the literal `-`, followed by the calculated `entryHash` for the entry.
     - *Note*: Both the SCID and the `entryHash` are calculated *before* the DI
       proof calculation is added to the entry.
-- `did:tdw` uses the same DID-to-HTTPS transformation as `did:web`, so
-  `did:tdw`'s  `did.jsonl` (JSON Lines) file is found in the same location as
+- `did:webvh` uses the same DID-to-HTTPS transformation as `did:web`, so
+  `did:webvh`'s  `did.jsonl` (JSON Lines) file is found in the same location as
   `did:web`'s `did.json` file, and supports an easy transition from `did:web` to
-  gain the added benefits of `did:tdw`.
+  gain the added benefits of `did:webvh`.
 - For backwards compatibility, and for verifiers that "trust" `did:web`, a
-`did:tdw` can be trivially modified and published in parallel to a `did:web`
-DID. For resolvers that want more assurance, `did:tdw` provides a way to "trust
+`did:webvh` can be trivially modified and published in parallel to a `did:web`
+DID. For resolvers that want more assurance, `did:webvh` provides a way to "trust
 did:web" (or to enable a "trusted web" if you say it fast) enabled by the
 features listed in the [introduction](./README.md).

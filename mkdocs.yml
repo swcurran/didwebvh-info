@@ -1,10 +1,10 @@
-site_name: Trust DID Web (did:tdw) DID Method Information
-repo_name: decentralized-identity/trustdidweb-info
-repo_url: https://github.com/decentralized-identity/trustdidweb-info
+site_name: did:webvh DID Method Information -- "did:web + Verifiable History"
+repo_name: decentralized-identity/didwebvh-info
+repo_url: https://github.com/decentralized-identity/didwebvh-info
 theme:
   name: material
-  logo: https://raw.githubusercontent.com/decentralized-identity/trustdidweb-info/main/docs/assets/tdw.jpg
-  favicon: https://raw.githubusercontent.com/decentralized-identity/trustdidweb-info/maindocs/assets/favicon.ico
+  logo: https://raw.githubusercontent.com/decentralized-identity/didwebvh-info/main/docs/assets/didwebvh.jpg
+  favicon: https://raw.githubusercontent.com/decentralized-identity/didwebvh-info/main/docs/assets/favicon.ico
   icon:
     repo: fontawesome/brands/github
   palette:
@@ -78,25 +78,25 @@ extra:
     provider: mike
 nav:
 - Welcome:
-    - Introduction to Trust DID Web: README.md
+    - Introduction to did:webvh: README.md
     - Overview: overview.md
     - did/whois: whois.md
     - Release Notes: version.md
 - The Specification:
     - Specification: specification.md
 - Implementer's Guide:
-    - The `did:tdw` Implementer's Guide: implementers-guide/README.md
+    - The `did:webvh` Implementer's Guide: implementers-guide/README.md
     - Using Pre-Rotation keys: implementers-guide/prerotation-keys.md
     - DID Portability: implementers-guide/did-portability.md
     - Witnesses: implementers-guide/witnesses.md
     - High Assurance DIDs with DNS: implementers-guide/high-assurance-dids-with-dns.md
-- A `did:tdw` Example Log:
-    - did:tdw DID Log Example: example.md
+- A `did:webvh` Example Log:
+    - did:webvh DID Log Example: example.md
 - Implementations:
-    - did:tdw Registrars/Resolvers: implementations.md
-    - Trust DID Web Server: trustdidweb-server.md
+    - did:webvh Registrars/Resolvers: implementations.md
+    - did:webvh Web Server: trustdidweb-server.md
 - Demos:
-    - Trust DID Web (did:tdw) Demos: demos/README.md
+    - did:webvh Web (did:tdw) Demos: demos/README.md
 - Contributing:
     - How to Contribute: root_README.md
     - Contributor Guidelines: root_CONTRIBUTOR.md

@@ -9,7 +9,7 @@ that work themselves. The extra participants are intended to identify both
 malicious attackers of the identifier, and malicious use of the identifier by
 the DID Controller.
 
-Witnesses play an explicit function in `did:tdw`. When used by a DID
+Witnesses play an explicit function in `did:webvh`. When used by a DID
 Controller, witnesses (themselves identified by DIDs) are sent
 pending DID log entries prepared by the DID Controller. The
 witnesses verify the log entry using their copy of the
@@ -30,8 +30,8 @@ cannot independently publish an update to their DID -- they must get and publish
 the witness approval proofs.
 
 The application of witnesses is very much dependent on the governance
-of the ecosystem. Such governance is outside the scope of the `did:tdw`
-specification, and up to those deploying `did:tdw` DIDs. Hence, a DID
+of the ecosystem. Such governance is outside the scope of the `did:webvh`
+specification, and up to those deploying `did:webvh` DIDs. Hence, a DID
 Controller that controls a series of DIDs and uses those DIDs as [[ref:
 witnesses adds no additional trust or security to a DID if no properly defined
 governance is in place. In particular, in order for witnesses to add
@@ -46,6 +46,6 @@ attacker would need to compromise both the web-publishing infrastructure of the
 DID Controller (where they publish the DID's `did.jsonl` file) as well as its
 DNS entry.
 
-`did:tdw` witnesses have been specified to be simple to implement and use. Their
+`did:webvh` witnesses have been specified to be simple to implement and use. Their
 power and effectiveness will come in how they are deployed within specific,
 governed ecosystems.
