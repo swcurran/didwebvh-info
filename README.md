@@ -2,7 +2,7 @@
 
 This is the information site/repository for the **did:webvh ("`did:web` + Verifiable History") DID Method**. This DID Method was formerly called `did:tdw` ("Trust DID Web").
 
-`did:webvh` information is published at [https://didwebvh.info]](https://didwebvh.info)
+`did:webvh` information is published at [https://didwebvh.info](https://didwebvh.info)
 
 The `did:webvh` specification is published at [https://identity.foundation/didwebvh](https://identity.foundation/didwebvh/next)
 
