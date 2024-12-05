@@ -1,26 +1,26 @@
-# Trust DID Web - Information
+# did:webvh DID Method - Information
 
-This is the information site/repository for the **Trust DID Web (`did:tdw`) DID Method**.
+This is the information site/repository for the **did:webvh ("`did:web` + Verifiable History") DID Method**. This DID Method was formerly called `did:tdw` ("Trust DID Web").
 
-`did:tdw` information is published at [https://didtdw.org](https://didtdw.org)
+`did:webvh` information is published at [https://didwebvh.info](https://didwebvh.info)
 
-The `did:tdw` specification is published at [https://identity.foundation/trustdidweb](https://identity.foundation/trustdidweb)
+The `did:webvh` specification is published at [https://identity.foundation/didwebvh](https://identity.foundation/didwebvh/next)
 
 ## Contributing
 
 Contributions to this information site are welcome! Feel free to improve the
 content found here about the DID Method:
 
-- talk about what you have done with `did:tdw`,
-- share information about the `did:tdw` software you have written,
-- tell us about the services you offer in deploying `did:tdw`, or
-- anything else you can think of about `did:tdw`.
+- talk about what you have done with `did:webvh`,
+- share information about the `did:webvh` software you have written,
+- tell us about the services you offer in deploying `did:webvh`, or
+- anything else you can think of about `did:webvh`.
 
-The `did:tdw` information site is a [MkDocs Material] site generated from the
+The `did:webvh` information site is a [MkDocs Material] site generated from the
 Markdown files in the site's [GitHub repository].
 
 [MkDocs Material]: https://squidfunk.github.io/mkdocs-material/
-[GitHub Repository]: https://github.com/decentralized-identity/trustdidweb-info
+[GitHub Repository]: https://github.com/decentralized-identity/didwebvh-info
 
 Contributions can be mode via pull requests (PRs) to the GitHub repository that will
 be reviewed and (if relevant) merged. You can use the GitHub website itself to add or
