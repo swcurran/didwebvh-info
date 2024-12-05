@@ -78,7 +78,7 @@ security assurances provided by `did:webvh`.
     - SCID := `base58btc(multihash(JCS(preliminary log entry with placeholders), <hash algorithm>))`
         - `JCS` := an implementation of the JSON Canonicalization Scheme ([RFC8785](https://www.rfc-editor.org/info/rfc8785))
         - `multihash` := an implementation of the [multihash](https://multiformats.io/multihash/) specification
-        - `<hash algorithm>` := one of the hash algorithms accepted by  `did:webvh` (see [parameters](https://identity.foundation/trustdidweb/#didtdw-did-method-parameters) in the specification)
+        - `<hash algorithm>` := one of the hash algorithms accepted by  `did:webvh` (see [parameters](https://identity.foundation/didwebvh/next/#didwebvh-did-method-parameters) in the specification)
         - `base58btc` := an implementation of the [base58btc](https://datatracker.ietf.org/doc/html/draft-msporny-base58-03) function
 
 3. Update the preliminary log entry

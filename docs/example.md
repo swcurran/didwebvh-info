@@ -1,4 +1,4 @@
-!!! note
+!!! warning
 
     The set of examples here use the older `did:tdw` DID Method name, and v0.4 of the `did:webvh` specification. This example will be updated with the new [v0.5 did:webvh specification](https://identity.foundation/didwebvh/next) as soon as the implementations catch up to the specification.
 
