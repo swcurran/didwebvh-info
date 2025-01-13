@@ -1,6 +1,6 @@
 # DID Portability
 
-As noted in the [DID Portability](https://identity.foundation/trustdidweb/#did-portability) section of the
+As noted in the [DID Portability](https://identity.foundation/didwebvh/#did-portability) section of the
 specification, a `did:webvh` DID can be renamed (ported) by changing the `id` DID string in
 the DIDDoc to one that resolves to a different HTTPS URL, as long as the
 specified conditions are met.
