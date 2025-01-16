@@ -94,7 +94,7 @@ nav:
     - did:webvh DID Log Example: example.md
 - Implementations:
     - did:webvh Registrars/Resolvers: implementations.md
-    - did:webvh Web Server: trustdidweb-server.md
+    - did:webvh Web Server: didwebvh-server.md
 - Demos:
     - did:webvh Demos: demos/README.md
 - Contributing:

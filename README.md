@@ -4,7 +4,7 @@ This is the information site/repository for the **did:webvh ("`did:web` + Verifi
 
 `did:webvh` information is published at [https://didwebvh.info](https://didwebvh.info)
 
-The `did:webvh` specification is published at [https://identity.foundation/didwebvh](https://identity.foundation/didwebvh/next)
+The `did:webvh` specification is published at [https://identity.foundation/didwebvh](https://identity.foundation/didwebvh)
 
 ## Contributing
 

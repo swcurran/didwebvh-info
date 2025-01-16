@@ -2,7 +2,7 @@
 
 This server is built with the FastAPI framework.
 
-The did:webvh spec: [https://identity.foundation/didwebvh/next](https://identity.foundation/didwebvh/next)
+The did:webvh spec: [https://identity.foundation/didwebvh](https://identity.foundation/didwebvh)
 
 ## Abstract
 

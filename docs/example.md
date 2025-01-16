@@ -1,6 +1,6 @@
 !!! warning
 
-    The set of examples here use the older `did:tdw` DID Method name, and v0.4 of the `did:webvh` specification. This example will be updated with the new [v0.5 did:webvh specification](https://identity.foundation/didwebvh/next) as soon as the implementations catch up to the specification.
+    The set of examples here use the older `did:tdw` DID Method name, and v0.4 of the `did:webvh` specification. This example will be updated with the new [v0.5 did:webvh specification](https://identity.foundation/didwebvh) as soon as the implementations catch up to the specification.
 
 The following covers the evolution of a `did:tdw` from inception through several
 versions, showing the DID, DIDDoc, DID Log, and some of the
@@ -15,13 +15,13 @@ Lines convention.
 
 ### DID Creation Data
 
-These examples show the important structures used in the [Create (Register)](https://identity.foundation/trustdidweb/#create-register) operation for a `did:tdw` DID.
+These examples show the important structures used in the [Create (Register)](https://identity.foundation/didwebvh/#create-register) operation for a `did:tdw` DID.
 
 #### Input to the SCID Generation Process with Placeholders
 
 The following JSON is an example of the input that the DID Controller
 constructs and passes into the
-[SCID Generation Process](https://identity.foundation/trustdidweb/#scid-generation-and-verification). In this example, the DIDDoc is
+[SCID Generation Process](https://identity.foundation/didwebvh/#scid-generation-and-verification). In this example, the DIDDoc is
 particularly boring, containing the absolute minimum for a valid DIDDoc.
 
 This example includes both the initial "authorized keys" to sign the Data Integrity proof
@@ -57,7 +57,7 @@ are in the `parameters` property in the log entry.
 After the SCID is generated, the literal `{SCID}` placeholders are
 replaced by the generated SCID value (see below). This JSON is the
 input to the [`entryHash` generation
-process](https://identity.foundation/trustdidweb/#entry-hash-generation-and-verification) -- with the SCID
+process](https://identity.foundation/didwebvh/#entry-hash-generation-and-verification) -- with the SCID
 `versionId``. Once the process has run, the version number of this first version
 of the DID (`1`), a dash `-` and the resulting output hash replace the [[ref:
 SCID as the `versionId` value.
@@ -143,7 +143,7 @@ The same content "un-prettified", as it is found in the `did.jsonl` file:
 #### `did:web` Version of DIDDoc
 
 As noted in the [publishing a parallel `did:web`
-DID](https://identity.foundation/trustdidweb/#publishing-a-parallel-didweb-did) section of this specification a `did:tdw` can be published
+DID](https://identity.foundation/didwebvh/#publishing-a-parallel-didweb-did) section of this specification a `did:tdw` can be published
 by replacing `did:tdw` with `did:web` in the DIDDoc, adding an `alsoKnownAs` entry for the `did:tdw`
 and publishing the resulting DIDDoc at `did.json`, logically beside the `did.jsonl` file.
 
@@ -182,7 +182,7 @@ found in the `nextKeyHashes` property from version 1 of the DID. As required by 
 `did:tdw` specification, a new `nextKeyHashes` is included in the new `parameters`.
 - The new (but unchanged) DIDDoc is included in its entirety, as the value of the `state` property.
 - The resultant JSON object is passed into the [`entryHash` generation
-  process](https://identity.foundation/trustdidweb/#entry-hash-generation-and-verification) which outputs the
+  process](https://identity.foundation/didwebvh/#entry-hash-generation-and-verification) which outputs the
   `entryHash` for this log entry. Once again, the `versionId` value is
   replaced by the version number (the previous version number plus `1`, so `2`
   in this case), a dash (`-`), and the new `entryHash`.
