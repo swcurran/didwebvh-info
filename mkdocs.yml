@@ -80,12 +80,14 @@ nav:
 - Welcome:
     - Introduction to did:webvh: README.md
     - Overview: overview.md
+    - Work Item Meetings: agenda.md
     - did/whois: whois.md
     - Release Notes: version.md
 - The Specification:
     - Specification: specification.md
 - Implementer's Guide:
     - The `did:webvh` Implementer's Guide: implementers-guide/README.md
+    - What Are A DID's Valid Keys?: implementers-guide/did-valid-keys.md
     - Using Pre-Rotation keys: implementers-guide/prerotation-keys.md
     - DID Portability: implementers-guide/did-portability.md
     - Witnesses: implementers-guide/witnesses.md
