@@ -59,6 +59,21 @@ Resolver implementers should use the errors listed below as standardized codes f
 **Title:** Version number in log doesn't match expected 
 **Detail:** A DID log entry's version number '${version}' does not match the expected sequence '${i + 1}'.
 
+### version-invalid
+
+**Title:** Version number in log is invalid 
+**Detail:** A DID log entry's version number '${version}' is zero or not numeric.
+
+### versionid-format-invalid
+
+**Title:** VersionId format is invalid.
+**Detail:** A DID log entry's versionId '${versionId}' format is invalid.
+
+### versiontime-format-invalid
+
+**Title:** VersionTime format is invalid.
+**Detail:** A DID log entry ('${version}') has a `versionTime` that cannot be parsed as a ISO date-time for comparisons.
+
 ### scid-verification-failed
 
 **Title:** SCID not derived from logEntryHash  
