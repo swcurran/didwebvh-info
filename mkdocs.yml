@@ -81,6 +81,7 @@ nav:
     - Introduction to did:webvh: README.md
     - Overview: overview.md
     - Frequently Asked Questions: faq.md
+    - DID Rubric Evaluation: did-rubric-evaluation.md
     - Work Item Meetings: agenda.md
     - did/whois: whois.md
     - Release Notes: version.md
