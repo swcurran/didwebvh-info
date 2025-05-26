@@ -122,6 +122,8 @@ In addition, `did:webvh` **Watchers** support portability by indexing DIDs by th
 
 Importantly, `did:webvh` places **no constraints on the contents of the DID Document** beyond the general requirements of DID Core. This allows Controllers to structure their DIDDocs to suit a wide range of use cases, cryptographic suites, service types, and interoperability profiles—such as DIDComm, OIDC4VP, ISO mDL linkage, or custom trust registries.
 
+To support compatibility with existing DID resolution infrastructure, DID Controllers may also publish a parallel `did:web` identifier that references the latest version of the `did:webvh` DID Document. This allows systems that only support `did:web` to continue resolving the identifier while benefiting from the extended capabilities of `did:webvh`. The `did:webvh` specification explicitly supports this dual-publication model as a transitional interoperability pattern.
+
 This flexibility makes `did:webvh` an ideal foundation for integrating decentralized identifiers into existing platforms, without imposing new protocol or governance assumptions.
 
 ## Availability
