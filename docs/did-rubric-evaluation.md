@@ -8,21 +8,15 @@
 
 This document provides an evaluation of the `did:webvh` method against the categories in the [W3C DID Rubric](https://www.w3.org/TR/did-rubric/), to help implementers and evaluators understand its design choices and trade-offs.
 
----
-
 ## Identifier Creation
 
 `did:webvh` identifiers are deterministic and can be created by any party that can publish static files at a known location accessible via HTTPS or equivalent. While typically hosted on a web domain, `did:webvh` DIDs can also be published on platforms that support deterministic file URLs—such as GitHub Pages, Google Cloud Storage, or other web-accessible file hosts—without requiring server-side logic or blockchain infrastructure.
 
 While domain names do require registration from an authority (i.e., a domain registrar), the process is open and permissionless in the sense that any individual or organization can acquire a domain and publish a DID without requiring approval from a centralized identity authority. The creation of a `did:webvh` identifier is therefore permissionless in practice, as long as the entity controls a hosting location capable of serving content over HTTPS.
 
----
-
 ## Identifier Update
 
 Updates to the DID are recorded as append-only entries in the DID Log. Each log entry is signed, includes the updated DID Document (DIDDoc), and is cryptographically linked to the previous entry via a hash chain. Only keys authorized in DID Log can produce valid updates. Versioning is explicit and verifiable.
-
----
 
 ## Identifier Deactivation
 
@@ -33,8 +27,6 @@ Updates to the DID are recorded as append-only entries in the DID Log. Each log 
 2. **Log-based deactivation**: Alternatively, the DID Controller may create a new DID Log entry that marks the DID as explicitly `"deactivated"`. This entry becomes the final entry in the verifiable log history, allowing the DID to remain resolvable in a verifiable but deactivated state. This preserves historical access and auditability while preventing further updates.
 
 In both cases, independent Watchers may retain cached versions of the DID and its final state, allowing clients and relying parties to reference historical data even after deactivation.
-
----
 
 ## Persistence
 
@@ -50,15 +42,11 @@ In addition, features like:
 
 all contribute to ensuring that a `did:webvh` identifier can outlive any single deployment environment. Watchers serve as decentralized anchors for long-lived trust and historical resolution.
 
----
-
 ## Resolution
 
 `did:webvh` DID resolution uses a similar [DID-to-HTTPS transformation](https://identity.foundation/didwebvh/#the-did-to-https-transformation) to `did:web`. A resolver fetches the DID Log from the corresponding HTTPS location, verifies the cryptographic integrity and signatures of each entry, and constructs the current or requested version of the DID Document.
 
 Each update to the DID is recorded in an append-only log, forming a cryptographically linked history of changes. Resolvers validate each link in the chain, ensuring the integrity of the DID over time.
-
----
 
 ## DID URL Resolution
 
@@ -68,8 +56,6 @@ Resolvers must apply this default service when no explicit `#files` service is d
 
 In addition, `did:webvh` defines a special `#whois` implicit service for resolving `/<did>/whois`, which returns a Verifiable Presentation—if published—containing Verifiable Credentials about the DID Controller. The mechanism is based on the [DIF](https://identity.foundation) [Linked Verifiable Presentation](https://identity.foundation/linked-vp/) specification. As with the `#files`
 service, the implicit `#whois` service can also be overridden by a service explicitly defined in the DIDDoc.
-
----
 
 ## Metadata
 
@@ -82,8 +68,6 @@ service, the implicit `#whois` service can also be overridden by a service expli
 - Timestamps and SCID references tied to the returned version
 
 The `didResolutionMetadata` object may also include structured error details (via `problemDetails`) in case of resolution failure, helping clients distinguish between a non-existent DID, a deactivated one, or an invalid state. This clarity supports better error handling and trust decisions.
-
----
 
 ## Cryptographic Agility
 
@@ -98,13 +82,9 @@ Cryptographic agility is built into the design of `did:webvh`:
 - DID Controllers can migrate to newer cryptographic policies by updating the `method` field in a new log entry, referencing a newer version of the specification.
 - Future versions will extend support to additional signature suites and hash algorithms, enabling continuous evolution without breaking compatibility with prior entries.
 
----
-
 ## Privacy
 
 `did:webvh` is public by design. All resolution activity occurs over HTTPS and may be visible to the hosting server or CDN. There is no native unlinkability or correlation resistance. DID Controllers and resolvers should avoid publishing identifying information unless intended.
-
----
 
 ## Equivocation Protection
 
@@ -116,8 +96,6 @@ Two optional components strengthen equivocation resistance:
 - **Watchers**: Independent observers can monitor DIDs over time, cache verified states, and detect re-published or rewritten logs with altered history.
 
 These technical features enable ecosystems to layer verifiable governance on top of `did:webvh`. For example, trust frameworks or registries can define who is allowed to act as a witness, how Watchers reach consensus, or how policy violations are detected or responded to.
-
----
 
 ## Portability
 
@@ -131,8 +109,6 @@ This mechanism enables both:
 Resolvers can follow the portability chain to verify that the current DID is a valid successor of the original, preserving trust and data associations across platforms or infrastructure changes.
 
 In addition, `did:webvh` **Watchers** support portability by indexing DIDs by their self-certifying identifier (SCID). This allows a resolver to query a Watcher using the SCID and retrieve the DID's current or historical state—regardless of whether the DID has been moved -- or removed. This enables decentralized resolution and persistence even in cases where the original location is no longer available.
-
----
 
 ## Interoperability
 
@@ -148,25 +124,17 @@ Importantly, `did:webvh` places **no constraints on the contents of the DID Docu
 
 This flexibility makes `did:webvh` an ideal foundation for integrating decentralized identifiers into existing platforms, without imposing new protocol or governance assumptions.
 
----
-
 ## Availability
 
 DIDs are as available as the hosting web server. Redundancy and survivability can be extended via `did:webvh` (or independent) Watchers, which provide hosting of the data needed to resolve the DID and DID URLs. Resolvers may be configured to consult Watchers if the authoritative domain is down or unreachable.
-
----
 
 ## Cost and Complexity
 
 Operational cost is low. No blockchain or ledger infrastructure is required. The primary implementation complexity lies in managing the DID and its associated keys. Additional, though generally lower, complexity comes from maintaining the DID Log, handling versioned documents, and coordinating optional features like Witnesses and Watchers. Overall, the method is well suited for web-native deployments and can be adopted incrementally with minimal infrastructure.
 
----
-
 ## Human-Readability
 
 Partially human-readable. The domain portion of the DID is familiar and user-friendly. The embedded SCID (self-certifying identifier) is not human-readable but provides cryptographic integrity and uniqueness. Overall, `did:webvh` balances familiarity and security.
-
----
 
 ## Versioning
 
