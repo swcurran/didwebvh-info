@@ -78,7 +78,7 @@ Cryptographic agility is built into the design of `did:webvh`:
 - Verification methods use the [multikey](https://w3c-ccg.github.io/multikey/) format, enabling algorithm-independent public key representation.
 - The `method` parameter in the DID Log specifies the version of the `did:webvh` specification being used.
 - Each version of the `did:webvh` specification defines a fixed list of permitted cryptographic algorithms and suites.
-  - Version 1 permits the use of the Ed25519 2022 cryptographic suite for signatures and SHA2-256 for hashing.
+  - Version 1 permits the use of the `eddsa-jcs-2022` cryptographic suite for signatures (using `ed25519` keys) and SHA2-256 for hashing.
 - DID Controllers can migrate to newer cryptographic policies by updating the `method` field in a new log entry, referencing a newer version of the specification.
 - Future versions will extend support to additional signature suites and hash algorithms, enabling continuous evolution without breaking compatibility with prior entries.
 
@@ -118,7 +118,7 @@ In addition, `did:webvh` **Watchers** support portability by indexing DIDs by th
 - [Data Integrity proofs](https://www.w3.org/TR/vc-data-integrity/) for signing DID Documents
 - HTTPS-based resolution and hosting
 - DID URLs, including query parameters and path resolution
-- The [Linked Verifiable Presentation](https://identity.foundation/linked-vp/) format for publishing assertions about the DID Controller (via `/whois`)
+- The [Linked Verifiable Presentation](https://identity.foundation/linked-vp/) format for publishing assertions about the DID Controller (via resolving `<did>/whois`)
 
 Importantly, `did:webvh` places **no constraints on the contents of the DID Document** beyond the general requirements of DID Core. This allows Controllers to structure their DIDDocs to suit a wide range of use cases, cryptographic suites, service types, and interoperability profiles—such as DIDComm, OIDC4VP, ISO mDL linkage, or custom trust registries.
 
