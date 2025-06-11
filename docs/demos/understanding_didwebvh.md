@@ -2,7 +2,7 @@
 
 This tutorial will help you understand each step in the creation of `did:webvh` DID log entries, a crucial part of the `did:webvh` DID Method. The entry log contains the verifiable record of all the updates made to a did:webvh DID, moving the "trust" of a `did:webvh` DID from DNS to the verifiable log. DNS is still important for discoverability, but the log is where confidence in the provenance of the DID is maintained. In this tutorial we will carry out the manual steps to create a `did:webvh` DID, inspecting the inputs and outputs of each step, and the resulting entry log. In a real deployment, this all happens automatically, but understanding the steps will help you understand how the `did:webvh` method works, and how to integrate it into your own applications.
 
-## Audienace
+## Audience
 
 This tutorial is anyone who wants to understand the details of how the `did:webvh` method works, including the low level steps in creating and updating `did:webvh` DIDs. This includes those interested in the DID Method, and those tasked with integrating the existing implementations into their technical stack, or developing their own implementation of the DID Method.
 
