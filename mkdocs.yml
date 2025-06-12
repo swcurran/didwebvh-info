@@ -103,6 +103,7 @@ nav:
     - did:webvh Web Server: didwebvh-server.md
 - Demos:
     - did:webvh Demos: demos/README.md
+    - Tutorial -- Understanding did:webvh DID Log Entry Details: demos/understanding_didwebvh.md
 - Contributing:
     - How to Contribute: root_README.md
     - Contributor Guidelines: root_CONTRIBUTOR.md
