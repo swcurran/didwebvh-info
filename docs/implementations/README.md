@@ -4,7 +4,7 @@ Implementations of `did:webvh` software for DID Controller registrars, resolvers
 
 - [DIF] -- [Typescript](https://github.com/decentralized-identity/didwebvh-ts) (Registrar/Resolver)
 - [DIF] -- [Python](https://github.com/decentralized-identity/didwebvh-py) (Registrar/Resolver)
-- [Nut's Foundation] -- [Go](https://github.com/nuts-foundation/trustdidweb-go) (Registrar/Resolver)
+- [Nuts Foundation] -- [Go](https://github.com/nuts-foundation/trustdidweb-go) (Registrar/Resolver)
 - [DIF] -- [Rust](https://github.com/decentralized-identity/didwebvh-rs)  (Registrar/Resolver)
 - [Procivis] -- [Rust](https://github.com/procivis/one-core/tree/main/lib/one-core/src/provider/did_method/webvh) (Resolver)
 - [Affinidi] -- [Rust](https://github.com/affinidi/affinidi-tdk-rs/tree/main/crates/affinidi-did-resolver/affinidi-did-resolver-methods/did-webvh) (Resolver)
@@ -16,7 +16,7 @@ Implementations of `did:webvh` software for DID Controller registrars, resolvers
 Please see each implementation's repository for details on features and capabilities.
 
 [DIF]: https://identity.foundation
-[Nut's Foundation]: https://nuts.foundation
+[Nuts Foundation]: https://nuts.foundation
 [Procivis]: https://procivis.ch
 [Affinidi]: https://affinidi.com
 [OWF]: https://openwallet.foundation
