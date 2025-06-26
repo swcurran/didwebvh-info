@@ -58,14 +58,14 @@ Now that we have our environment set up, we can start creating our `did:webvh` D
     2. The output of the command (file `outputs/did.json`) contains a "templatized" version of what will be the initial DID document. We're using the simplest DID Document possible, containing only the minimum required data (according to the [DID Core Specification]) -- the JSON-LD context, and the ID of the DID itself. "Templatized" means that it contains placeholders (`{SCID}`) for the SCID -- that will be calculated and inserted later. Like any DID Controller, you can populate this DID Document with whatever (valid) content you like. If you add more references to the DID, make sure to use the `{SCID}` literal wherever it is needed.
 2. Next we'll define the `did:webvh` DID parameters for the DID. Again, we are going to stick to the minimum required by the `did:webvh` spec -- just the SCID, the method, and a single "authorization key" that will be used to demonstrate the authority to create and update the DID.
     1. Run: **`webvh-cli new-key`**, which will use the ACA-Py instance to create an Ed25519 key pair, printing the multikey public key as the command output. The private key will be held safely in the ACA-Py agent. and used to sign proofs in later steps.
-    2. Run: **`webvh-cli did-params --method 0.5 --update-key <pub-auth-key>`**, where `<pub-auth-key>` is the public key of the authorization key created by the previous command.
+    2. Run: **`webvh-cli did-params --method 1.0 --update-key <pub-auth-key>`**, where `<pub-auth-key>` is the public key of the authorization key created by the previous command. While `method` (currently) defaults to 1.0, we wanted to highlight that defining the specification version controls how the entries are processed, what cryptography can be used, and other deployment details. See the [cryptographic agility] section of the `did:webvh` specification.
     3. The output (file `outputs/parameters.json`) contains the parameters JSON for your new DID, including the public authorization key, the version of the `did:webvh` spec you are using, and the SCID (as a placeholder `{SCID}`).
 3. Next we will combine what we have so far into the SCID input file, so we'll be ready to generate the SCID.
-    1. Run: **`webvh-cli gen-scid-input --version-time <datetime>`**, where `<datetime>` is the current date and time in ISO 8601 format (e.g., `2023-10-01T12:00:00Z`).
+    1. Run: **`webvh-cli gen-scid-input --version-time <datetime>`**, where `<datetime>` is the current date and time in ISO 8601 format (e.g., `2025-06-01T17:00:00Z`).
     2. Normally, the DID generation software would set the `versionTime` to the current time, but for this tutorial, we want to show that it is the DID Controller setting that -- self-attested.
     3. Review the output (file `cat outputs/scid_input.json`), which contains something that looks like a DID log entry, with the SCID placeholder where the SCID is needed.
 4. Generate the SCID.
-    1. Run: **`webvh-cli gen-scid-value`**. The output is the SCID for your DID. It will be different every time you run this tutorial, as it minimum, the authorization key will be different. This step updates the file `cat outputs/draft_log_entry.json`.
+    1. Run: **`webvh-cli gen-scid-value`**. The output is the SCID for your DID. It will be different every time you run this tutorial, as it minimum, the authorization key will be different. This step updates the file `outputs/draft_log_entry.json` if you want to check it out.
 5. Populate the `versionId` by generating a hash over the DID log entry as it currently stands.
     1. Run: **`webvh-cli gen-version-id`**.
     2. The output (file `outputs/log_entry.json`) contains most of the DID Log Entry. Missing is just the Data Integrity proof, which will be added in the next step.
@@ -83,6 +83,7 @@ We have our first `did:webvh` DID ready for publication! At this point, you woul
 [`did:web`]: https://www.w3.org/TR/did-web/
 [did:webvh plugin]: https://plugins.aca-py.org/latest/webvh/
 [did:webvh Server]: https://github.com/decentralized-identity/didwebvh-server-py
+[cryptographic agility]: https://identity.foundation/didwebvh/v1.0/#cryptographic-agility
 
 ## Step 3: Publishing Your did:webvh Log File
 
