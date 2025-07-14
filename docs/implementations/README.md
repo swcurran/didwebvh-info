@@ -10,7 +10,7 @@ Implementations of `did:webvh` software for DID Controller registrars, resolvers
 - [Affinidi] -- [Rust](https://github.com/affinidi/affinidi-tdk-rs/tree/main/crates/affinidi-did-resolver/affinidi-did-resolver-methods/did-webvh), [Crate](https://crates.io/crates/did-webvh) (Resolver)
 - [DIF] -- [`did:webvh` Server - Python](https://github.com/decentralized-identity/didwebvh-server-py) (Server)
 - [DIF] -- [`did:webvh` Watcher - Python](https://github.com/decentralized-identity/didwebvh-watcher-py) (Watcher)
-- [OWF] -- [ACA-Py Plugin for `did:webvh`]([did:webvh ACA-Py Plugin]: https://github.com/openwallet-foundation/acapy-plugins/tree/main/webvh) (DID Controller/Resolver Framework)
+- [OWF] -- [ACA-Py Plugin for `did:webvh`][https://github.com/openwallet-foundation/acapy-plugins/tree/main/webvh) (DID Controller/Resolver Framework)
 - [OWF] -- [Credo-TS Module for `did:webvh`](https://github.com/openwallet-foundation/credo-ts/pull/2238) (DID Resolver Framework)
 
 Please see each implementation's repository for details on features and capabilities.
