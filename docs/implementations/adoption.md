@@ -1,9 +1,11 @@
-# `did:webvh` Deployments
+# `did:webvh` Adoption
 
-The following is a list of known deployments of `did:webvh` software. If you
-have a deployment that is not listed here, please let us know (or submit a PR).
-It is really helpful to the community to know about deployments so that we can
-learn from each other and build a larger network.
+The following is a list of known adoptions of `did:webvh`, including
+deployments of `did:webvh` software and inclusions of `did:webvh` in
+standards, reference architectures, and governance frameworks. If you have
+an adoption that is not listed here, please let us know (or submit a PR).
+It is really helpful to the community to know about the growing ecosystem
+around `did:webvh`.
 
 ## United Nations Transparency Protocol (UNTP)
 
